@@ -45,8 +45,8 @@ const switchTab = (id) => {
         document.getElementById( "reported" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
-
-        displayReportedPosts();
+        
+       displayReportedPosts();
     }
 };
 
@@ -144,18 +144,22 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+    const likedAarticale = clearOldData('liked-articale')
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "liked" ).appendChild(div);
+        likedAarticale.appendChild(div);
     });
 };
 
 const displayReportedPosts = () => {
+    const reportedAarticale = clearOldData('reported-articale')
     const reportedPosts = getReportedPosts();
+    const nodeLIst = document.querySelectorAll('article')
+    console.log(nodeLIst)
     reportedPosts.forEach((post) => {
         const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
+        reportedAarticale.appendChild(div);
     });
 };
 
@@ -165,4 +169,9 @@ const loadPosts = async () =>{
   showPosts(posts);
 }
 
+const clearOldData = (idName) => {
+  const elementId = document.getElementById(idName)
+  elementId.innerHTML = ''
+  return elementId
+}
 loadPosts();

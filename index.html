@@ -105,11 +105,18 @@
 
                 </article>
                 <article class="post">
-                    <h4 class="post__header">What does JavaScript EVENT LOOP?</h4>
-                    <p class="px-3"> 
-                        JavaScript event loop manage the sequeltial code runing proess. Its separate the code STACK frame, QUEUE frame, HEAP for memory manage.
-                        first runs code call stack TOP to BOTTOM sequence from Stack frame. Call stack don't wait for anything and it will quikly execute. Event queue and async method will execuated when call stack is empty then checks the Event Queue. HEAP manage the memory and memory referance for any execuation. 
-
+                    <h4 class="post__header">Difference Between LocalStorage, SessionStorage</h4>
+                    <p class="px-3">LocalStorage and SessionStorage two option of  browsers to store key and value pair for a select domain using the Web API.</p>
+                    <p class="px-3">
+                        <strong>LocalStorage: </strong> localStorage contains the storage browser sessions. If the domain is opened in a new tab, or the browser is closed and reopened, it dosn't happen, the storage is saved if you mannualy deleted. It's  expir time is too long.
+                        "window.localStorage" tha method to save.
+                        "window.localStorage.setItem(keyName, keyValue)" to add more item
+                    </p>
+                    <p class="px-3">
+                        <strong>SessionStorage: </strong>sessionStorage key/value generate when domain start visit on the browser. If the browser is closed sessionStorage is also vanish. It clear the storage if sessionStorage time expire.
+                        "window.sessionStorage;" tha method to save.
+                        "window.sessionStorage.setItem(keyName, keyValue)" to add more item
+                    </p>
                 </article>
             </section>
         </main>
